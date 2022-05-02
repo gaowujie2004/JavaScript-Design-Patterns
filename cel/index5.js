@@ -2,6 +2,11 @@
 
 validator.add(loginForm.userName, [
   {
-    message: '密码长度至少6位',
+    strategy: 'isNotEmpty',
+    message: '不能为空',
+  },
+  {
+    strategy: 'minLength:6',
+    message: '用户名长度至少6位',
   },
 ]);
