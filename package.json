@@ -2,5 +2,11 @@
   "name": "JavaScript Design patterns gaowujie2004",
   "version": "0.0.1",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.33"
+  }
 }
