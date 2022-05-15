@@ -113,25 +113,33 @@ var event = (function () {
   };
 })();
 
-// console.log('先发布后订阅测试');
+/**
+ * todo: 实现思路
+ * 针对同一个 namespace 下，同一个 key 离线事件只能触发一次。
+ */
+console.log('先发布后订阅测试');
 // event.emit('111', '离线数据1');
 // event.emit('111', '离线数据2');
 
-event.on('111', function (data) {
-  console.log(data);
-});
-
-event.on('111', function (data) {
-  console.log(data);
-});
-
+/**================================== 离线只能触发一次 111 **/
 event.emit('111', '离线数据1');
+event.onece('111', function (data) {
+  console.log('111---', data);
+});
+event.on('111', function (data) {
+  console.log('111---', data);
+});
 
-// setTimeout(function () {
-//   event.on('111', function (data) {
-//     console.log(data);
-//   });
-// }, 2000);
-// setTimeout(function () {
-//   event.emit('111', '在线数据');
-// }, 3000);
+/**================================== 不同的离线事件 **/
+event.emit('222', '离线数据2');
+
+event.on('222', function (data) {
+  console.log('222---', data);
+});
+event.on('222', function (data) {
+  console.log('222---', data);
+});
+
+event.emit('111', '离线数据2');
+
+/**================================== 空间 **/
