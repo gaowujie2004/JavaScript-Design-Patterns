@@ -41,15 +41,15 @@ var ProxySingletonCustom = function (ConstructionFn) {
   };
 };
 
-var ProxySingletonCreateDiv = ProxySingletonCustom(CreateDiv);
+var SingletonCreateDiv = ProxySingletonCustom(CreateDiv);
 
-var c = new ProxySingletonCreateDiv('孩子啊');
-var d = new ProxySingletonCreateDiv('孩子啊');
+var c = new SingletonCreateDiv('孩子啊');
+var d = new SingletonCreateDiv('孩子啊');
 console.log('--相等', c === d, c, d);
 
 /**
  * 通过引入代理类的方式，我们同样完成了一个单例模式的编写，跟之前不同的是，现在我们把负责管理单例的逻辑移到了
- * 代理类 ProxySingletonCreateDiv 中。这样一来，CreateDiv 就变成了普通类，跟他的 ProxySingletonCreateDiv 组合起来
+ * 代理类 ProxySingletonCreateDiv 中。这样一来，CreateDiv 就变成了普通类，跟他的 SingletonCreateDiv 组合起来
  * 可以达到单例模式的效果。
  *
  * 本例是`缓存代理`的应用之一

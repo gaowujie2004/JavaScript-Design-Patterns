@@ -42,7 +42,10 @@ Singleton.getInstance = (() => {
 })();
 
 /**
- * 我们通过 Singleton.getInstance 来获取 Singleton 类的唯一实例，这种方式相对简单，但有一个问题，就是增加了这个类的`不透明性`，
- * Singleton 类的使用者必须知道这个类是单例类，跟以往通过 new XXX 的方式来获取对象不同，这里偏要使用 Singleton.getInstance 来获取对象。
+ * 我们通过 Singleton.getInstance 来获取 Singleton 类的唯一实例，这种方式相对简单，
+ * 但有一个问题，就是增加了这个类的`不透明性`。
+ *
+ * Singleton 类的使用者必须知道这个类是单例类，跟以往通过 new XXX 的方式来获取对象不同，
+ * 这里偏要使用 Singleton.getInstance 来获取对象。
  * 虽然完成单例类的编写，但上面的代码意义并不大，接下来一步一步写出更好的单例模式。
  */
